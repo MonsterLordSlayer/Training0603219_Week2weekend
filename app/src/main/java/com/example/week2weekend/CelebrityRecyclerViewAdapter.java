@@ -43,6 +43,7 @@ public class CelebrityRecyclerViewAdapter extends RecyclerView.Adapter<Celebrity
         holder.btFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemsCelebrity.setFav("yes");
 
             }
         });

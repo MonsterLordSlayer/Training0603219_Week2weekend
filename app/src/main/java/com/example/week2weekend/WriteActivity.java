@@ -19,7 +19,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class WriteActivity extends AppCompatActivity {
+public class WriteActivity extends BaseActivity {
     EditText etWrite;
     Button btWrite;
     TextView tvRead;
