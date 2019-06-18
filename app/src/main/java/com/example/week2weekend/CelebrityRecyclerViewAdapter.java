@@ -18,9 +18,11 @@ import java.util.ArrayList;
 
 public class CelebrityRecyclerViewAdapter extends RecyclerView.Adapter<CelebrityRecyclerViewAdapter.ViewHolder> {
     private ArrayList<Celebrity> celebrityList=new ArrayList<>();
+    DatabaseHelper databaseHelper ;
 
     public CelebrityRecyclerViewAdapter(ArrayList<Celebrity> celebrityList) {
         this.celebrityList=celebrityList;
+        if (this.celebrityList==null)celebrityList=new ArrayList<>();
     }
     @NonNull
     @Override
@@ -44,6 +46,9 @@ public class CelebrityRecyclerViewAdapter extends RecyclerView.Adapter<Celebrity
             @Override
             public void onClick(View v) {
                 itemsCelebrity.setFav("yes");
+                databaseHelper = new DatabaseHelper(v.getContext());
+                databaseHelper.updateCelebrity(itemsCelebrity);
+                notifyDataSetChanged();
 
             }
         });
@@ -65,6 +70,7 @@ public class CelebrityRecyclerViewAdapter extends RecyclerView.Adapter<Celebrity
 
     @Override
     public int getItemCount() {
+        if (celebrityList==null) return 0;
         return celebrityList.size();
     }
 

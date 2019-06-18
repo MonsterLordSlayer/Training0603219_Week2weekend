@@ -3,7 +3,7 @@ package com.example.week2weekend;
 import java.util.Locale;
 
 public class DatabaseContract {
-    public static final String DATABASE_NAME="db_AngelKiller1";
+    public static final String DATABASE_NAME="db_AngelKiller2";
     public static final int DATABASE_VERSION=1;
     public static final String TABLE_NAME="celebrity_table";
     public static final String FIELD_NAME="name";
@@ -25,7 +25,7 @@ public class DatabaseContract {
 
     }
     public static String whereClauseForUpdate(String name){
-        return String.format(Locale.US,"WHERE %S = ",FIELD_NAME, name);
+        return String.format(Locale.US,"%s = \"%s\"",FIELD_NAME, name);
     }
 
 }
