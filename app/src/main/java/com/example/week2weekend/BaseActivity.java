@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -46,6 +47,12 @@ public class BaseActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.drawable:
+                        intent = new Intent(navigationView.getContext(), DrawableActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.provider:
+                        intent = new Intent(navigationView.getContext(),ContentProviderActivity.class);
+                        startActivity(intent);
                         break;
                     default:
                         return true;

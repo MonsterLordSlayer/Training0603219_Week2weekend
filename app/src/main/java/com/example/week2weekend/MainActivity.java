@@ -26,6 +26,7 @@ import java.util.Locale;
 
 public class MainActivity extends BaseActivity {
     EditText edTypeName;
+    EditText edUpdateDOB;
     EditText edTypeDOB;
     Toolbar toolbar;
     DatabaseHelper databaseHelper;
@@ -40,6 +41,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         edTypeName=findViewById(R.id.edTypeName);
         edTypeDOB=findViewById(R.id.edTypeDOB);
+        edUpdateDOB=findViewById(R.id.etUpdateDOB);
         databaseHelper = new DatabaseHelper(this);
 
         initializeRecyclerView();
@@ -66,7 +68,8 @@ public class MainActivity extends BaseActivity {
     private void initializeRecyclerView(){
         rvCelebRecyclerView=findViewById(R.id.rvCelebrity);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this);
-        CelebrityRecyclerViewAdapter celebRecyclerViewAdapter=new CelebrityRecyclerViewAdapter(databaseHelper.queryForAllCelebrityRecords());
+        CelebrityRecyclerViewAdapter celebRecyclerViewAdapter=new CelebrityRecyclerViewAdapter(databaseHelper.queryForAllCelebrityRecords(),edUpdateDOB);
+
 
         rvCelebRecyclerView.setLayoutManager(layoutManager);
         rvCelebRecyclerView.setAdapter(celebRecyclerViewAdapter);

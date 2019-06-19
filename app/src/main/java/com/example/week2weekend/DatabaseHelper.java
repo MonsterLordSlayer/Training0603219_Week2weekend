@@ -90,6 +90,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         writableDatabase.close();
 
     }
+    public void updateCelebrity(Celebrity celebrity,String name){
+        SQLiteDatabase writableDatabase=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(FIELD_NAME, name);
+        contentValues.put(FIELD_DOB, celebrity.getDob());
+
+        contentValues.put(FIELD_FAV, celebrity.getFav());
+        writableDatabase.update(TABLE_NAME, contentValues,whereClauseForUpdate(celebrity.getName()),null );
+        writableDatabase.close();
+
+    }
     public void deleteCelebrity(String name){
         SQLiteDatabase writableDatabase=this.getWritableDatabase();
         writableDatabase.delete(TABLE_NAME,whereClauseForUpdate(name),null);

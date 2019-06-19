@@ -23,9 +23,7 @@ public class WriteActivity extends BaseActivity {
     EditText etWrite;
     Button btWrite;
     TextView tvRead;
-    private DrawerLayout dl;
-    private ActionBarDrawerToggle t;
-    private NavigationView nv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

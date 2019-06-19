@@ -3,7 +3,7 @@ package com.example.week2weekend;
 import java.util.Locale;
 
 public class DatabaseContract {
-    public static final String DATABASE_NAME="db_AngelKiller2";
+    public static final String DATABASE_NAME="db_AngelKiller";
     public static final int DATABASE_VERSION=1;
     public static final String TABLE_NAME="celebrity_table";
     public static final String FIELD_NAME="name";

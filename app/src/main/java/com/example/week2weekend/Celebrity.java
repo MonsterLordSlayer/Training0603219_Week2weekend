@@ -41,7 +41,7 @@ public class Celebrity implements Parcelable {
     }
 
     public void setDob(String dob) {
-        this.name = dob;
+        this.dob = dob;
     }
     public void setFav(String fav){
         this.fav=fav;
